@@ -1,40 +1,33 @@
-/* Reset some default styles */
-html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, address, cite, code, img, small, strong, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-body {
+* {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #008080 20%, #006400 50%, #000080 80%); /* Gradient of teal, green, and blue */
+}
+
+/* Gradient background */
+body {
+  background: linear-gradient(135deg, #008080, #000080); /* Gradient of teal and blue */
   color: #fff;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #008080; /* Teal */
+p, a {
+  font-weight: 300;
 }
 
-a {
-  color: #000080; /* Blue */
-  text-decoration: none;
+.avatar__md {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-a:hover {
-  color: #006400; /* Dark Green */
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
+.avatar__sm {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 #nav {
@@ -46,7 +39,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000000;
-  background: linear-gradient(135deg, #008080 20%, #006400 50%, #000080 80%); /* Gradient of teal, green, and blue */
+  background: linear-gradient(135deg, #008080, #000080); /* Gradient of teal and blue */
   text-decoration: none;
   padding: 16px 5%;
   z-index: 999;
@@ -61,10 +54,6 @@ a:hover {
   line-height: 0;
   margin: 0;
   color: #ebe0e0;
-}
-
-#logo span {
-  color: #006400; /* Dark Green */
 }
 
 @media (max-width: 640px) {
@@ -96,24 +85,30 @@ a:hover {
   padding-bottom: 1px;
 }
 
+@media (max-width: 520px) {
+  #nav__links {
+    column-gap: 3em;
+  }
+}
+
 .nav__link:hover {
-  color: #006400; /* Dark Green */
+  color: rgb(230, 228, 228);
   text-decoration: none;
-  border-color: #008080; /* Teal */
+  border-color: #fff; /* Adjusted border color on hover */
 }
 
 #create__room__btn {
   display: block;
-  background-color: #008080; /* Teal */
+  background-color: #845695;
   padding: 8px 24px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 #create__room__btn:hover {
-  background-color: #006400; /* Dark Green */
+  background-color: #6c4f7a; /* Darker shade on hover */
 }
 
 .nav--list {
@@ -133,7 +128,7 @@ a:hover {
 #members__button:hover svg > path,
 #chat__button:hover svg,
 .nav__link:hover svg {
-  fill: #008080; /* Teal */
+  fill: #fff;
 }
 
 .nav__link svg {
