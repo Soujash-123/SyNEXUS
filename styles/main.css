@@ -1,57 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-* {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #797a79;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #845695;
+/* Reset some default styles */
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code, img, small, strong, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #008080 20%, #006400 50%, #000080 80%); /* Gradient of teal, green, and blue */
   color: #fff;
-  font-size: 14px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-p,
+h1, h2, h3, h4, h5, h6 {
+  color: #008080; /* Teal */
+}
+
 a {
-  font-weight: 300;
+  color: #000080; /* Blue */
+  text-decoration: none;
 }
 
-.avatar__md {
-  height: 40px;
-  width: 40px;
-  object-fit: cover;
-  border-radius: 50%;
+a:hover {
+  color: #006400; /* Dark Green */
 }
 
-.avatar__sm {
-  height: 30px;
-  width: 30px;
-  object-fit: cover;
-  border-radius: 50%;
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 #nav {
@@ -63,7 +46,7 @@ a {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000000;
-  background-color: transparent; /* Transparent background for better gradient visibility */
+  background: linear-gradient(135deg, #008080 20%, #006400 50%, #000080 80%); /* Gradient of teal, green, and blue */
   text-decoration: none;
   padding: 16px 5%;
   z-index: 999;
@@ -77,7 +60,11 @@ a {
   font-weight: 700;
   line-height: 0;
   margin: 0;
-  color: #008080; /* teal color */
+  color: #ebe0e0;
+}
+
+#logo span {
+  color: #006400; /* Dark Green */
 }
 
 @media (max-width: 640px) {
@@ -109,29 +96,24 @@ a {
   padding-bottom: 1px;
 }
 
-@media (max-width: 520px) {
-  #nav__links {
-    column-gap: 3em;
-  }
-}
-
 .nav__link:hover {
-  color: rgb(230, 228, 228);
+  color: #006400; /* Dark Green */
   text-decoration: none;
-  border-color: #845695;
+  border-color: #008080; /* Teal */
 }
 
 #create__room__btn {
   display: block;
-  background-color: #006400; /* dark green color */
+  background-color: #008080; /* Teal */
   padding: 8px 24px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 #create__room__btn:hover {
-  background-color: #006400; /* dark green color */
+  background-color: #006400; /* Dark Green */
 }
 
 .nav--list {
@@ -151,7 +133,7 @@ a {
 #members__button:hover svg > path,
 #chat__button:hover svg,
 .nav__link:hover svg {
-  fill: #845695;
+  fill: #008080; /* Teal */
 }
 
 .nav__link svg {
