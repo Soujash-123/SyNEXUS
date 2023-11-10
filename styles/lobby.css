@@ -2,7 +2,7 @@
   width: 90%;
   max-width: 600px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #34e664, #2d97f0); /* Gradient of green and light blue */
+  background: linear-gradient(135deg, #ff6b6b, #5c5c5c); /* Gradient of red and dark gray */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -17,10 +17,9 @@
   border-radius: 10px 10px 0 0;
   padding: 10px;
   text-align: center;
-  background: linear-gradient(135deg, #304352, #d7d2cc); /* Gradient of dark blue and light gray */
+  background: linear-gradient(135deg, #ffcc29, #2d97f0); /* Gradient of yellow and light blue */
   margin: 0;
   font-size: 18px;
-  font-size: 300;
   line-height: 0;
 }
 
@@ -52,7 +51,7 @@
 .form__field__wrapper button[type='submit'] {
   margin-top: 32px;
   cursor: pointer;
-  background: linear-gradient(135deg, #34e664, #2d97f0); /* Gradient of green and light blue */
+  background: linear-gradient(135deg, #ff6b6b, #5c5c5c); /* Gradient of red and dark gray */
   border: none;
   color: #fff;
   font-size: 16px;
@@ -86,5 +85,5 @@
 }
 
 .avatar__option__selected {
-  border: 3px solid #34e664; /* Adjusted border color */
+  border: 3px solid #ffcc29; /* Adjusted border color */
 }
