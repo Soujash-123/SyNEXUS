@@ -3,7 +3,7 @@
   height: calc(100vh - 74px);
   width: 100%;
   position: relative;
-  background: linear-gradient(135deg, #00adb5, #2d97f0); /* Gradient of teal and light blue */
+  background: linear-gradient(135deg, #aaffa9, #11ffbd); /* Light green and light blue gradient */
 }
 
 #room__container {
@@ -38,7 +38,7 @@
   padding: 0 1rem;
   position: fixed;
   font-size: 18px;
-  background: linear-gradient(135deg, #262625, #323143); /* Gradient of dark gray and purple */
+  background: linear-gradient(135deg, #aaffa9, #11ffbd); /* Light green and light blue gradient */
   width: 218px;
 }
 
@@ -76,7 +76,7 @@
 
 #messages__container {
   height: calc(100vh - 85px);
-  background: linear-gradient(135deg, #262625, #363739); /* Gradient of dark gray and charcoal gray */
+  background-color: #262625;
   right: 0;
   position: absolute;
   width: 100%;
@@ -102,7 +102,7 @@
 }
 
 .message__body {
-  background: linear-gradient(135deg, #363739, #262625); /* Gradient of charcoal gray and dark gray */
+  background-color: #363739;
   border-radius: 10px;
   padding: 10px 15px;
   width: fit-content;
@@ -139,7 +139,7 @@
   position: fixed;
   bottom: 0;
   display: block;
-  background: linear-gradient(135deg, #1a1a1a, #3f434a); /* Gradient of dark gray and charcoal gray */
+  background-color: #1a1a1a;
   padding: 1em;
 }
 
@@ -151,7 +151,7 @@
   padding: 18px;
   font-size: 14px;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #3f434a, #1a1a1a); /* Gradient of charcoal gray and dark gray */
+  background-color: #3f434a;
 }
 
 #message__form input:focus {
@@ -170,7 +170,7 @@
   top: calc(100vh - 72px);
   overflow-y: auto;
   height: 100%;
-  background: linear-gradient(135deg, #3f434a, #1a1a1a); /* Gradient of charcoal gray and dark gray */
+  background: linear-gradient(135deg, #aaffa9, #11ffbd); /* Light green and light blue gradient */
 }
 
 #stream__box {
@@ -192,91 +192,73 @@
 }
 
 #streams__container {
+  background-color: #262625;
+  border-left: 1px solid #797a79;
+  position: fixed;
+  right: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  margin-bottom: 225px;
+  gap: 10px;
+  padding: 1em;
+  padding-top: 7.5rem;
+  height: calc(100vh - 74px);
 }
 
-.video__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #b366f9;
-  border-radius: 50%;
+#mute__button {
   cursor: pointer;
-  overflow: hidden;
-  height: 300px;
-  width: 300px;
-  background-image: url("/images/logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 75px;
+  border: none;
+  background-color: #3f434a;
+  color: #ede0e0;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.video-player {
-  height: 100%;
-  width: 100%;
+#mute__button:hover {
+  background-color: #545858;
 }
 
-.video-player video {
-  border-radius: 50%;
+#mute__icon {
+  width: 16px;
+  height: 16px;
+  fill: #ede0e0;
 }
 
-@media (max-width: 1400px) {
-  .video__container {
-    height: 200px;
-    width: 200px;
-  }
+#exit__button {
+  cursor: pointer;
+  border: none;
+  background-color: #3f434a;
+  color: #ede0e0;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-@media (max-width: 1200px) {
-  #members__container {
-    display: none;
-  }
-
-  #members__button {
-    display: block;
-  }
-
-  #stream__container {
-    width: calc(100% - 25rem);
-    left: 0;
-  }
+#exit__button:hover {
+  background-color: #545858;
 }
 
-@media (max-width: 980px) {
-  #stream__container {
-    width: calc(100% - 20rem);
-    left: 0;
-  }
-  #messages__container {
-    max-width: 20rem;
-  }
-
-  #message__form {
-    width: 18.2rem;
-  }
+#exit__icon {
+  width: 16px;
+  height: 16px;
+  fill: #ede0e0;
 }
 
-@media (max-width: 768px) {
-  #stream__container {
-    width: 100%;
-  }
+#video__button {
+  cursor: pointer;
+  border: none;
+  background-color: #3f434a;
+  color: #ede0e0;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
+}
 
-  .video__container {
-    height: 100px;
-    width: 100px;
-  }
+#video__button:hover {
+  background-color: #545858;
+}
 
-  #message__form {
-    width: 100%;
-  }
-
-  #messages__container {
-    max-width: none;
-  }
+#video__icon {
+  width: 16px;
+  height: 16px;
+  fill: #ede0e0;
 }
