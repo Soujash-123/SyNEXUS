@@ -4,7 +4,7 @@
 
 /* Gradient background */
 body {
-  background: linear-gradient(135deg, #008080, #000080); /* Gradient of teal and blue */
+  background: linear-gradient(135deg, #3494e6, #ec6ead); /* Gradient of blue and magenta */
   color: #fff;
   font-size: 14px;
   padding: 0;
@@ -39,7 +39,7 @@ p, a {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000000;
-  background: linear-gradient(135deg, #008080, #000080); /* Gradient of teal and blue */
+  background: linear-gradient(135deg, #3494e6, #ec6ead); /* Gradient of blue and magenta */
   text-decoration: none;
   padding: 16px 5%;
   z-index: 999;
@@ -99,7 +99,7 @@ p, a {
 
 #create__room__btn {
   display: block;
-  background-color: #845695;
+  background-color: #e44d26; /* Reddish-orange color */
   padding: 8px 24px;
   font-size: 14px;
   font-weight: 500;
@@ -108,7 +108,7 @@ p, a {
 }
 
 #create__room__btn:hover {
-  background-color: #6c4f7a; /* Darker shade on hover */
+  background-color: #c41d00; /* Darker shade on hover */
 }
 
 .nav--list {
