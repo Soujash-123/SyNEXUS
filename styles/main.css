@@ -1,10 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Gradient background */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5c5c5c, #ff6b6b); /* Gradient of dark gray and red */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2d97f0, #ffcc29); /* Gradient of light blue and yellow */
+}
+
 body {
-  background: linear-gradient(135deg, #3494e6, #ec6ead); /* Gradient of blue and magenta */
+  background: linear-gradient(135deg, #5c5c5c, #ff6b6b); /* Gradient of dark gray and red */
   color: #fff;
   font-size: 14px;
   padding: 0;
@@ -12,7 +35,8 @@ body {
   box-sizing: border-box;
 }
 
-p, a {
+p,
+a {
   font-weight: 300;
 }
 
@@ -39,7 +63,7 @@ p, a {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000000;
-  background: linear-gradient(135deg, #3494e6, #ec6ead); /* Gradient of blue and magenta */
+  background: linear-gradient(135deg, #5c5c5c, #ff6b6b); /* Gradient of dark gray and red */
   text-decoration: none;
   padding: 16px 5%;
   z-index: 999;
@@ -94,21 +118,20 @@ p, a {
 .nav__link:hover {
   color: rgb(230, 228, 228);
   text-decoration: none;
-  border-color: #fff; /* Adjusted border color on hover */
+  border-color: #ffcc29; /* Adjusted border color */
 }
 
 #create__room__btn {
   display: block;
-  background-color: #e44d26; /* Reddish-orange color */
+  background: linear-gradient(135deg, #ff6b6b, #5c5c5c); /* Gradient of red and dark gray */
   padding: 8px 24px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 5px;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 #create__room__btn:hover {
-  background-color: #c41d00; /* Darker shade on hover */
+  background: linear-gradient(135deg, #ffcc29, #2d97f0); /* Gradient of yellow and light blue */
 }
 
 .nav--list {
@@ -128,7 +151,7 @@ p, a {
 #members__button:hover svg > path,
 #chat__button:hover svg,
 .nav__link:hover svg {
-  fill: #fff;
+  fill: #ffcc29; /* Adjusted fill color */
 }
 
 .nav__link svg {
@@ -153,11 +176,11 @@ p, a {
 
   #create__room__btn {
     padding: 0;
-    background-color: transparent;
+    background: transparent;
     border-radius: 50%;
   }
 
   #create__room__btn:hover {
-    background-color: transparent;
+    background: transparent;
   }
 }
