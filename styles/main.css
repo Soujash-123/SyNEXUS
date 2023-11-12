@@ -28,7 +28,8 @@
 
 body {
   /* background-color: #1a1a1a; */
-  background-image: url(https://bitsum.com/wp-content/uploads/dark-background-images-5561-5821-hd-wallpapers.jpg);
+  /* background-image: url(https://bitsum.com/wp-content/uploads/dark-background-images-5561-5821-hd-wallpapers.jpg); */
+  background: #222826;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -68,10 +69,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgb(213, 255, 241);
   background-color: hsla(0, 0%, 57%, 0.2);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
   text-decoration: none;
   padding: 16px 5%;
   z-index: 999;
