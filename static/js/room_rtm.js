@@ -60,6 +60,10 @@ let handleChannelMessage = async (messageData, MemberId) => {
     if(data.type === 'user_left'){
         document.getElementById(`user-container-${data.uid}`).remove()
     }
+
+    if(data.type === 'file'){
+        addFileMessageToDom(data.displayName, data.fileName, data.fileType, data.fileData);
+    }
 }
 
 let sendMessage = async (e) => {

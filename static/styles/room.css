@@ -352,3 +352,22 @@
   transform: translateX(-50%);
   cursor: pointer;
 }
+
+
+#media__buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#media__buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#media__buttons img {
+  width: 20px;
+  height: 20px;
+}
