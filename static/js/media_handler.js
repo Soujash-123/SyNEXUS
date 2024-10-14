@@ -40,6 +40,7 @@ function toggleAudioRecording() {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                     audioChunks = [];
                     sendFile(audioBlob, 'audio');
+                    stream.getTracks().forEach(track => track.stop());
                 });
             });
     }
@@ -62,37 +63,72 @@ function sendFile(file, type) {
     const reader = new FileReader();
     reader.onload = function(e) {
         const fileData = e.target.result;
-        // Send the file data through the RTM channel
-        sendFileMessage(fileData, file.name, type);
+        // Instead of sending the whole file, we'll just send metadata
+        sendFileMessage(file.name, type, file.size);
+        // Then upload the file to the server
+        uploadFile(file, type);
     };
     reader.readAsDataURL(file);
 }
 
-function sendFileMessage(fileData, fileName, fileType) {
+function sendFileMessage(fileName, fileType, fileSize) {
     const message = {
-        type: 'file',
+        type: 'file_info',
         fileType: fileType,
         fileName: fileName,
-        fileData: fileData
+        fileSize: fileSize
     };
     channel.sendMessage({text: JSON.stringify(message)});
-    addFileMessageToDom(displayName, fileName, fileType, fileData);
 }
 
-function addFileMessageToDom(name, fileName, fileType, fileData) {
+function uploadFile(file, type) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('type', type);
+
+    fetch('/upload', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            addFileMessageToDom(displayName, file.name, type, data.url);
+            // Notify others about the uploaded file
+            notifyFileUploaded(file.name, type, data.url);
+        } else {
+            console.error('File upload failed:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function notifyFileUploaded(fileName, fileType, fileUrl) {
+    const message = {
+        type: 'file_uploaded',
+        fileName: fileName,
+        fileType: fileType,
+        fileUrl: fileUrl
+    };
+    channel.sendMessage({text: JSON.stringify(message)});
+}
+
+function addFileMessageToDom(name, fileName, fileType, fileUrl) {
     let fileContent;
     switch(fileType) {
         case 'image':
-            fileContent = `<img src="${fileData}" alt="${fileName}" style="max-width: 200px;">`;
+            fileContent = `<img src="${fileUrl}" alt="${fileName}" style="max-width: 200px;">`;
             break;
         case 'video':
-            fileContent = `<video src="${fileData}" controls style="max-width: 200px;"></video>`;
+            fileContent = `<video src="${fileUrl}" controls style="max-width: 200px;"></video>`;
             break;
         case 'audio':
-            fileContent = `<audio src="${fileData}" controls></audio>`;
+            fileContent = `<audio src="${fileUrl}" controls></audio>`;
             break;
         default:
-            fileContent = `<a href="${fileData}" download="${fileName}">${fileName}</a>`;
+            fileContent = `<a href="${fileUrl}" download="${fileName}">${fileName}</a>`;
     }
 
     let messagesWrapper = document.getElementById('messages');

@@ -64,6 +64,15 @@ let handleChannelMessage = async (messageData, MemberId) => {
     if(data.type === 'file'){
         addFileMessageToDom(data.displayName, data.fileName, data.fileType, data.fileData);
     }
+    if(data.type === 'file_info'){
+        // Display a message that a file is being uploaded
+        addMessageToDom(data.displayName, `Uploading ${data.fileName}...`);
+    }
+    
+    if(data.type === 'file_uploaded'){
+        // Display the uploaded file
+        addFileMessageToDom(data.displayName, data.fileName, data.fileType, data.fileUrl);
+    }
 }
 
 let sendMessage = async (e) => {
